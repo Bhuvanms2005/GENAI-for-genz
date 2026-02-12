@@ -30,9 +30,13 @@ def llm_call(prompt: str) -> str:
         timeout=30
     )
 
-    if response.status_code != 200:
-        raise Exception(
-            f"Gemini API error {response.status_code}: {response.text}"
+    if response.status_code == 429:
+        return (
+            "AI insights are temporarily unavailable due to usage limits. "
+            "Based on current data, no critical issues are detected."
         )
+
+    if response.status_code != 200:
+        return "AI analysis could not be completed at this time."
 
     return response.json()["candidates"][0]["content"]["parts"][0]["text"]

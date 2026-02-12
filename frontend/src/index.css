@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background: #0f172a;
+  overflow-x: hidden;
+}
+
+.dashboard {
+  width: 100%;
+  padding: 24px;
+  color: #e5e7eb;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+.card {
+  background: #111827;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  width: 100%;
+}
+
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.agent-card {
+  background: #020617;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.raw-json {
+  background: #020617;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  margin-top: 20px;
+  overflow-x: auto;
+  word-break: break-all;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 16px;
+  }
+}

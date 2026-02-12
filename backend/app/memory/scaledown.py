@@ -1,16 +1,20 @@
 from app.core.llm import llm_call
 
-def structured_scaledown(health_data: dict) -> str:
-    logs = health_data["daily_logs"]
+def structured_scaledown(health_data) -> str:
+    # ✅ FIX: handle both list and dict input safely
+    if isinstance(health_data, list):
+        logs = health_data
+    else:
+        logs = health_data.get("daily_logs", [])
 
     raw_text = ""
     for d in logs:
         raw_text += (
-            f"Date: {d['date']}, "
-            f"Steps: {d['steps']}, "
-            f"Sleep: {d['sleep_hours']}h, "
-            f"Calories: {d['calories']}, "
-            f"HR: {d['heart_rate_avg']}\n"
+            f"Date: {d.get('date')}, "
+            f"Steps: {d.get('steps')}, "
+            f"Sleep: {d.get('sleep_hours')}h, "
+            f"Calories: {d.get('calories')}, "
+            f"HR: {d.get('heart_rate_avg')}\n"
         )
 
     prompt = f"""

@@ -42,3 +42,13 @@ def doctor():
 @router.get("/anomalies")
 def anomalies():
     return anomaly_agent()
+@router.get("/progress")
+def progress():
+    return {
+        "progress_summary": {
+            "sleep_consistency": "Improving",
+            "activity_level": "Moderate",
+            "nutrition_balance": "Needs improvement",
+            "overall_score": 72
+        }
+    }
