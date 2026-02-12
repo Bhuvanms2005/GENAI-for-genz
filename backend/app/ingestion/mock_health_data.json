@@ -1,0 +1,19 @@
+{
+  "user_id": "user_001",
+  "daily_logs": [
+    {
+      "date": "2024-01-01",
+      "steps": 4200,
+      "sleep_hours": 5.2,
+      "calories": 2200,
+      "heart_rate_avg": 78
+    },
+    {
+      "date": "2024-01-02",
+      "steps": 9800,
+      "sleep_hours": 7.1,
+      "calories": 2600,
+      "heart_rate_avg": 72
+    }
+  ]
+}
